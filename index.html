@@ -27,7 +27,7 @@
                 <P class="control" v-for="(note, name) in notes">
                     <button class="button"
                         v-on:click="note.enabled = !note.enabled"
-                        v-bind:class="{'is-active': note.enabled, 'is-primary': note.enabled, 'is-outlined': !note.enabled}"
+                        v-bind:class="{'is-active': note.enabled, 'is-primary': note.enabled, 'is-dark': note.sharp, 'is-outlined': !note.enabled && !note.sharp}"
                     >
                         
                         <span class="tag is-dark" v-bind:style="{'background-color': note.color}">
