@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harmonics Visualizer</title>
+
+    <script src="./node_modules/paper/dist/paper-full.min.js"></script>
+    <script src="./node_modules/vue/dist/vue.min.js"></script>
+    <script src="./index.js" defer></script>
+    <link rel="stylesheet" href="./node_modules/bulma/css/bulma.min.css">
+</head>
+<body>
+<section class="section">
+    <div class="container" id="app">
+        
+        <div class="block box" >
+            <h1 class="title">
+                Harmonics Visualizer
+                </h1>
+            Tucker Johnson
+            <canvas class="block box" id="vis" style="background-color: whitesmoke; width: 100%; height: 353px;"> 
+
+            </canvas>
+            enable / disable notes
+            <div class="block field is-grouped">
+                <P class="control" v-for="(note, name) in notes">
+                    <button class="button"
+                        v-on:click="note.enabled = !note.enabled"
+                        v-bind:class="{'is-active': note.enabled, 'is-primary': note.enabled, 'is-outlined': !note.enabled}"
+                    >
+                        
+                        <span class="tag is-dark" v-bind:style="{'background-color': note.color}">
+                            {{name}}
+                        </span>
+                    </button>
+                </P>
+                
+            </div>
+            
+        </div>
+
+        
+
+    </div>
+</section>
+    
+</body>
+</html>
